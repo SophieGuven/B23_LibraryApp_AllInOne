@@ -12,8 +12,8 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",
                 "me.jvt.cucumber.report.PrettyReports:target"
         },
-        dryRun = false
-        ,tags = "@smoke"
+        dryRun = true
+        ,tags = "@wip"
 )
 public class TestRunner {
 }

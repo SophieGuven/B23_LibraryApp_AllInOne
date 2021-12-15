@@ -1,5 +1,6 @@
 package com.cydeo.step_defs;
 
+import com.cydeo.pages.DashBoardPage;
 import com.cydeo.pages.LoginPage;
 import com.cydeo.utility.BrowserUtil;
 import com.cydeo.utility.Driver;
@@ -22,6 +23,19 @@ public class UIStepDefs {
     public void should_be_displayed(String expectedResult) {
         System.out.println("Driver.getDriver().getCurrentUrl() = " + Driver.getDriver().getCurrentUrl());
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().endsWith(expectedResult));
+    }
+
+    /**
+     * This steps for Dashboard Feature
+     * @param moduleName
+     */
+    @When("user gets number of  {string}")
+    public void user_gets_number_of(String moduleName) {
+
+        String actualNUmber = new DashBoardPage().getModuleCount(moduleName);
+        System.out.println("actualNUmber = " + actualNUmber);
+
+
     }
 
 
