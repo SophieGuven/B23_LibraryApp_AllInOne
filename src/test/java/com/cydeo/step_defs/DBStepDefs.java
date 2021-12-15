@@ -19,7 +19,7 @@ public class DBStepDefs {
 
         System.out.println("expectedNumber = " + expectedNumber);
 
-        Assert.assertEquals(expectedNumber, new UIStepDefs().actualNumber);
+        Assert.assertEquals(expectedNumber, UIStepDefs.actualNumber);
     }
 
 }
