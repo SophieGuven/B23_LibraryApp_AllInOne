@@ -15,6 +15,8 @@ public class APIStepDefs {
     Response response;
     ValidatableResponse thenPart;
 
+    public static String actualAPINumber;
+
 
     @Given("the base_uri and base_path set")
     public void the_base_uri_and_base_path_set() {
@@ -59,7 +61,7 @@ public class APIStepDefs {
     }
     @Then("I get the field value for  {string} path")
     public void i_get_the_field_value_for_path(String path) {
-        String actualAPINumber = response.jsonPath().getString(path.toLowerCase());
+         actualAPINumber = response.jsonPath().getString(path.toLowerCase());
         System.out.println("actualAPINumber = " + actualAPINumber);
     }
 }

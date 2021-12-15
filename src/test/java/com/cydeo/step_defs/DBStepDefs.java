@@ -24,7 +24,7 @@ public class DBStepDefs {
 
     /**
      * Three Point
-     * @param string
+     *
      */
     @Then("the informations should be same with database  {string}")
     public void the_informations_should_be_same_with_database(String moduleName) {
@@ -33,12 +33,15 @@ public class DBStepDefs {
         String moduleQuery = LibraryDB_Util.getModuleQuery(moduleName);
         DB_Util.runQuery(moduleQuery);
         String expectedNumber = DB_Util.getFirstRowFirstColumn();
-
+        System.out.println("expectedNumber = " + expectedNumber);
         // GET ALL DATA FROM API
-
+        System.out.println("APIStepDefs.actualAPINumber = " + APIStepDefs.actualAPINumber);
 
         // GET ALL DATA FROM UI
         System.out.println("UIStepDefs.actualNumber = " + UIStepDefs.actualNumber);
+
+        // VERIFICATION
+        Assert.assertTrue(APIStepDefs.actualAPINumber.equals(expectedNumber)&&UIStepDefs.actualNumber.equals(expectedNumber));
 
 
     }
