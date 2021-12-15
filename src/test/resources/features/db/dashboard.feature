@@ -1,4 +1,4 @@
-@smoke@wip
+@smoke
 Feature: Dashboard Page
   Background:
     Given the user on the login page
