@@ -8,7 +8,7 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 
 public class UIStepDefs {
-
+    public static String actualNumber;
     @Given("the user on the login page")
     public void the_user_on_the_login_page() {
         new LoginPage().goTo();
@@ -32,8 +32,8 @@ public class UIStepDefs {
     @When("user gets number of  {string}")
     public void user_gets_number_of(String moduleName) {
 
-        String actualNUmber = new DashBoardPage().getModuleCount(moduleName);
-        System.out.println("actualNUmber = " + actualNUmber);
+        actualNumber = new DashBoardPage().getModuleCount(moduleName);
+        System.out.println("actualNumber = " + actualNumber);
 
 
     }
