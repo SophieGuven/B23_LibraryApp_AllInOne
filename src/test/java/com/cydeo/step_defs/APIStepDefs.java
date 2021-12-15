@@ -47,4 +47,19 @@ public class APIStepDefs {
         thenPart.body(path, is(expectedResult));
 
     }
+
+    /**
+     * Thre Point
+     */
+    @When("I send get request to {string} endpoint")
+    public void i_send_get_request_to_endpoint(String endpoint) {
+        response = givenPart.when().get(endpoint);
+
+        thenPart= response.then();
+    }
+    @Then("I get the field value for  {string} path")
+    public void i_get_the_field_value_for_path(String path) {
+        String actualAPINumber = response.jsonPath().getString(path.toLowerCase());
+        System.out.println("actualAPINumber = " + actualAPINumber);
+    }
 }

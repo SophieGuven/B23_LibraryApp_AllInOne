@@ -1,5 +1,6 @@
 @smoke
 Feature: Dashboard Page
+
   Background:
     Given the user on the login page
 
@@ -16,8 +17,7 @@ Feature: Dashboard Page
       | Borrowed Books |
 
 
-
-  @db @ui
+  @db @ui @wip
   Scenario: Verfiy amount of users numbers with three layers
     Given the user logged in as "librarian"
     When user gets number of  "Users"
@@ -26,3 +26,25 @@ Feature: Dashboard Page
     And I send get request to "/dashboard_stats" endpoint
     Then I get the field value for  "Users" path
     Then the informations should be same with database  "Users"
+
+
+      #Verfiy dashboard stats
+      # UI     -- actualUI
+      # DB    -- expected
+      # API   -- actualAPI
+
+
+
+
+
+
+
+    #Add Book From UI     -- expected
+    #Verify it from DB    -- actualDB
+    #Verify it from API   -- actualAPI
+
+    #Add Book From API     -- expected
+    #Verify it from UI     -- actualUI
+    #Verify it from DB     -- actualDB
+
+

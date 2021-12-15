@@ -1,4 +1,4 @@
-@smoke@wip
+@smoke
 Feature: Add book on api
 
   Scenario: Add book as a librarian on api

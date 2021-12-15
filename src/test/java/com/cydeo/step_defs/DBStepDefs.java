@@ -22,4 +22,25 @@ public class DBStepDefs {
         Assert.assertEquals(expectedNumber, UIStepDefs.actualNumber);
     }
 
+    /**
+     * Three Point
+     * @param string
+     */
+    @Then("the informations should be same with database  {string}")
+    public void the_informations_should_be_same_with_database(String moduleName) {
+
+        // GET ALL DATA FROM DATABASE
+        String moduleQuery = LibraryDB_Util.getModuleQuery(moduleName);
+        DB_Util.runQuery(moduleQuery);
+        String expectedNumber = DB_Util.getFirstRowFirstColumn();
+
+        // GET ALL DATA FROM API
+
+
+        // GET ALL DATA FROM UI
+        System.out.println("UIStepDefs.actualNumber = " + UIStepDefs.actualNumber);
+
+
+    }
+
 }
