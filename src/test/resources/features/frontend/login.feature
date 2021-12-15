@@ -14,3 +14,5 @@ Feature: Login
   Scenario: Login as a student
     When the user logged in as "student"
     Then "books" should be displayed
+
+    #to find easily your related tags use CMD+SHFT+F
